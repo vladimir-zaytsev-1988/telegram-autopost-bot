@@ -9,7 +9,7 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 async def send_scheduled_posts():
-    with open("bot/posts.json", "r", encoding="utf-8") as f:
+    with open("posts.json", "r", encoding="utf-8") as f:
         posts = json.load(f)
 
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
