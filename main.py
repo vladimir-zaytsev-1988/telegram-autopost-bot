@@ -15,7 +15,7 @@ async def send_scheduled_posts():
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     for post in posts:
         if post["datetime"] == now:
-            photo = InputFile(f"bot/{post['image_path']}")
+            photo = InputFile(post['image_path'])
             await bot.send_photo(chat_id=CHANNEL_ID, photo=photo, caption=post["text"])
 
 async def scheduler():
